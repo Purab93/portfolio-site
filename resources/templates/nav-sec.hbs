@@ -1,0 +1,39 @@
+<ul class="nav nav-pills justify-content-center portfolio-tabs" id="myTab" role="tablist">
+    {{#each filterData}}
+        <li class="nav-item">
+            <a class="nav-link" id="{{this.id}}-tab" data-toggle="tab" href="#{{this.id}}" role="tab" aria-controls="{{this.id}}"
+                aria-selected="true">{{this.label}}</a>
+        </li>
+    {{/each}}
+</ul>
+
+<div class="tab-content">
+    {{#each filterData}}
+        <div class="tab-pane" id="{{this.id}}" role="tabpanel" aria-labelledby="{{this.id}}-tab">
+            <div class="tile-container container">
+                <div class="tile-row row">
+                    {{#each this.data}}
+                        <div class="tile-holder col-md-4">
+                            {{#if this.isSlider}} 
+                                <div class="tile-slider">
+                                    {{#each this.imgData}}
+                                        <img class="tile-img" src={{this}} />
+                                    {{/each}}
+                                </div>
+                            {{else}}
+                                {{#each this.imgData}}
+                                    <img class="tile-img" src={{this}} />
+                                {{/each}}
+                            {{/if}}
+                            {{#if this.pdfLink}}
+                                <div class="link-holder">
+                                    <a class="details-link" href={{this.pdfLink}} target="_blank">Click here to <br> view details</a>
+                                </div>
+                            {{/if}}
+                        </div>
+                    {{/each}}
+                    </div>
+            </div>
+        </div>
+    {{/each}}
+</div>

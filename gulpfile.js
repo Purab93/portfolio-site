@@ -47,7 +47,7 @@ Gulp task to compile Templates files
 
 function templates() {
 
-    return src('./templates/*.hbs')
+    return src('./resources/templates/*.hbs')
 
         .pipe(handlebars())
 
@@ -65,7 +65,7 @@ function templates() {
 
         .pipe(uglify())
 
-        .pipe(dest('./templates/'));
+        .pipe(dest('./resources/templates/'));
 
 }
 
