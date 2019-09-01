@@ -20,17 +20,41 @@ const fileData = {
         label: 'Social Media',
         basePath: './content/social_media/',
         data: [{
-            imgData: ['social_media_0.jpg']
+            imgData: ['social_media_0.jpg'],
+            pdfName: 'social_media_0_1_2_3_4_5.pdf'
         }, {
-            imgData: ['social_media_1.jpg']
+                imgData: ['social_media_1.jpg'],
+                pdfName: 'social_media_0_1_2_3_4_5.pdf'
         }, {
-            imgData: ['social_media_2.jpg']
+                imgData: ['social_media_2.jpg'],
+                pdfName: 'social_media_0_1_2_3_4_5.pdf'
         }, {
-            imgData: ['social_media_3.jpg']
+                imgData: ['social_media_3.jpg'],
+                pdfName: 'social_media_0_1_2_3_4_5.pdf'
         }, {
-            imgData: ['social_media_4.jpg']
+                imgData: ['social_media_4.jpg'],
+                pdfName: 'social_media_0_1_2_3_4_5.pdf'
         }, {
-            imgData: ['social_media_5.jpg']
+                imgData: ['social_media_5.jpg'],
+                pdfName: 'social_media_0_1_2_3_4_5.pdf'
+        }, {
+                imgData: ['social_media_6.jpg'],
+                pdfName: 'social_media_6_7_8.pdf'
+        }, {
+                imgData: ['social_media_7.jpg'],
+                pdfName: 'social_media_6_7_8.pdf'
+        }, {
+                imgData: ['social_media_7.jpg'],
+                pdfName: 'social_media_6_7_8.pdf'
+        }, {
+                imgData: ['social_media_9.jpg'],
+                pdfName: 'social_media_9.pdf'
+        }, {
+                imgData: ['social_media_10.jpg'],
+                pdfName: 'social_media_10_11.pdf'
+        }, {
+                imgData: ['social_media_11.jpg'],
+                pdfName: 'social_media_10_11.pdf'
         }]
     },
     "writing": {
@@ -50,6 +74,26 @@ const fileData = {
             imgData: ['Invitation_Riddhi.jpg']
         }, {
             imgData: ['Greeting_MID30_Ahmedabad.jpg']
+        }]
+    },
+    "films": {
+        label: 'Films',
+        data: [{
+            videoFrame: '<iframe width="100%" height="90%" src="https://www.youtube.com/embed/5aQ7h5uyq5Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+        }, {
+            videoFrame: '<iframe width="100%" height="90%" src="https://www.youtube.com/embed/kOQv6zeKoew" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+        }, {
+            videoFrame: '<iframe width="100%" height="90%" src="https://www.youtube.com/embed/jUXmcG537QE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+        }, {
+            videoFrame: '<iframe width="100%" height="90%" src="https://www.youtube.com/embed/LaZdPaa8ZWo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+        }, {
+            videoFrame: '<iframe width="100%" height="90%" src="https://www.youtube.com/embed/p46z947lzCM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+        }, {
+            videoFrame: '<iframe width="100%" height="90%" src="https://www.youtube.com/embed/tBpD0tatsC0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+        }, {
+            videoFrame: '<iframe width="100%" height="90%" src="https://www.youtube.com/embed/edtLXCevLm8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+        }, {
+            videoFrame: '<iframe width="100%" height="90%" src="https://www.youtube.com/embed/YIBSw402IMI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
         }]
     }
 };
@@ -145,13 +189,17 @@ function filterData(fileData) {
             resultArr.push({
                 imgData: imgData,
                 isSlider: imgData.length > 1,
-                pdfLink: obj.pdfName ? value.basePath + obj.pdfName : ''
+                pdfLink: obj.pdfName ? value.basePath + obj.pdfName : '',
+                videoFrame: obj.videoFrame || ''
             });
-            allobj.data.push({
-                imgData: imgData,
-                isSlider: imgData.length > 1,
-                pdfLink: obj.pdfName ? value.basePath + obj.pdfName : ''
-            });
+            if (key !== 'films') {
+                allobj.data.push({
+                    imgData: imgData,
+                    isSlider: imgData.length > 1,
+                    pdfLink: obj.pdfName ? value.basePath + obj.pdfName : '',
+                    videoFrame: obj.videoFrame || ''
+                });
+            }
         });
 
         finArr.push({
