@@ -617,6 +617,22 @@ img.tile-img {
     color: #fff;
 }
 
+.portfoliosec .link-holder a,
+.portfoliosec .link-holder a:link,
+.portfoliosec .link-holder a:active,
+.portfoliosec .link-holder a:visited,
+.portfoliosec .link-holder a:hover,
+.portfoliosec .link-holder a:focus {
+    color: #000;
+}
+
+.portfoliosec .link-holder a:hover,
+.portfoliosec .link-holder .nav-link:focus,
+.portfoliosec .link-holder .nav-link:hover {
+    border-bottom: 0;
+    border-radius: 0;
+}
+
 .nav-pills .nav-link.active,
 .nav-pills .show>.nav-link {
     background-color: transparent;

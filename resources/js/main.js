@@ -57,6 +57,29 @@ const fileData = {
                 pdfName: 'social_media_10_11.pdf'
         }]
     },
+    "brochures": {
+        label: 'Brochures',
+        basePath: './content/brochures/',
+        data: [{
+            imgData: ['brochure_1.jpg', 'brochure_2.jpg', 'brochure_3.jpg'],
+            pdfName: 'brochure_1_2_3.pdf'
+        }, {
+            imgData: ['brochure_4.jpg', 'brochure_5.jpg'],
+            pdfName: 'brochure_4_5.pdf'
+        }, {
+            imgData: ['brochure_6.jpg', 'brochure_7.jpg', 'brochure_8.jpg'],
+            pdfName: 'brochure_6_7_8.pdf'
+        }, {
+            imgData: ['brochure_9.jpg', 'brochure_10.jpg', 'brochure_11.jpg'],
+            pdfName: 'brochure_9_10_11.pdf'
+        }, {
+            imgData: ['brochure_12.jpg', 'brochure_13.jpg'],
+            pdfName: 'brochure_12_13.pdf'
+        }, {
+            imgData: ['brochure_14.jpg', 'brochure_15.jpg', 'brochure_16.jpg', 'brochure_17.jpg'],
+            pdfName: 'brochure_14_15_16_17.pdf'
+        }]
+    },
     "writing": {
         label: 'Assorted Writing',
         basePath: './content/assorted-writing/',
