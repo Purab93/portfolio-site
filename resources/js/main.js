@@ -103,6 +103,18 @@ const clientLogo = ['JP Sports & Events.jpg', 'Three A Communciation.jpg', 'FLXB
 function init() {
     renPortfSec();
     renClntSec();
+    bindEvents();
+}
+
+function bindEvents(params) {
+    $('.nav-link').on('click', function (event) {
+        $('.nav-item').removeClass('active');
+        $(event.currentTarget).parents('.nav-item').addClass('active');
+    });
+
+    $(window).scroll(function () {
+        $('.header').toggleClass('scrolled', $(this).scrollTop() > 250);
+    });
 }
 
 function renPortfSec() {
