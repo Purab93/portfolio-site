@@ -3,9 +3,9 @@ const { src, dest, series, parallel, watch } =require('gulp');
 var uglify =
     require('gulp-uglify');
 
-// var concat = require('gulp-concat');
+ var concat = require('gulp-concat');
 
-// var uglifycss = require('gulp-uglifycss');
+ var uglifycss = require('gulp-uglifycss');
 
 var handlebars = require('gulp-handlebars');
 
@@ -77,25 +77,25 @@ Gulp task to compile CSS
 
 */
 
-// function minifyCss() {
+function minifyCss() {
 
-//     return src('./styles/*.css')
+    return src('./resources/css/*.css')
 
-//         .pipe(concat('payment.min.css'))
+        .pipe(concat('content.min.css'))
 
-//         .pipe(uglifycss({
+        .pipe(uglifycss({
 
-//             "maxLineLen":
-//                 80,
+            "maxLineLen":
+                80,
 
-//             "uglyComments":
-//                 true
+            "uglyComments":
+                true
 
-//         }))
+        }))
 
-//         .pipe(dest('./prod-build/'));
+        .pipe(dest('./resources/prod-build/'));
 
-// }
+}
 
 
 
@@ -105,17 +105,17 @@ Gulp task to compile JavaScripts
 
 */
 
-// function minifyScripts() {
+function minifyScripts() {
 
-//     return src(['./js/*.js'])
+    return src(['./resources/js/*.js'])
 
-//         .pipe(concat('payment.min.js'))
+        .pipe(concat('content.min.js'))
 
-//         .pipe(uglify())
+        .pipe(uglify())
 
-//         .pipe(dest('./prod-build/'));
+        .pipe(dest('./resources/prod-build/'));
 
-// }
+}
 
 
 
@@ -160,15 +160,5 @@ exports.watch =
 
 exports.templates = templates;
 
-// exports['prod-build'] =
-//     parallel(
-
-//         templates,
-
-//         minifyScripts,
-
-//         minifyVendor,
-
-//         series(gulpStyle, minifyCss)
-
-//     );
+exports['prod-build'] =
+    parallel(templates,minifyScripts,minifyCss);
