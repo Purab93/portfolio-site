@@ -1,5 +1,10 @@
 /* @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Open+Sans:300,400,600,700,800|Abel|Roboto+Slab|Ubuntu:300,400,500,700&display=swap'); */
 
+@font-face {
+    font-family: gotham-light;
+    src: url(../fonts/UFONTS.COM_GOTHAM-LIGHT.TTF);
+  }
+
 html,
 body {
     padding: 0;
@@ -10,7 +15,7 @@ body {
     position: relative;
     min-height: 100%;
     background-color: #fff;
-    font-family: serif;
+    font-family: gotham-light;
     font-size: 15px;
     line-height: 26px;
     color: #54585a;
@@ -31,7 +36,6 @@ h6 {
     color: #393939;
     padding: 0;
     margin: 0 0 10px 0;
-    font-family: 'Roboto Slab', serif;
 }
 
 h1,
@@ -47,6 +51,7 @@ h3 {
 h4 {
     font-size: 18px;
     color: #454a4d;
+    font-weight: bold;
 }
 
 h5,
@@ -72,7 +77,20 @@ a:focus {
     font-size: 18px;
 }
 
+.scrolled a,
+.scrolled a:link,
+.scrolled a:active,
+.scrolled a:visited,
+.scrolled a:hover,
+.scrolled a:focus {
+    color: #000;
+}
 
+
+.offer-section {
+    font-weight: bold;
+    padding: 40px 10px;
+    line-height: 2.4;
 }
 a:hover,
 .nav-link:focus,
@@ -87,9 +105,14 @@ a:hover,
     border-bottom: 1px solid #fff;
     border-radius: 0;
 }
-.nav-item {
-    margin: 0 10px;
+.scrolled .nav-item.active .nav-link{
+    border-color: #000;
 }
+.nav-item {   
+    border-right: 2px solid #fff;
+    padding: 0 10px;
+}
+li.nav-item:last-child {border-right:0;}
 img {
     max-width: 100%;
     vertical-align: middle;
@@ -339,6 +362,12 @@ a.link1:hover {
     display: block;
 }
 
+.homepage-logo{
+    max-height: 50vh;
+}
+img.country-img {
+    max-width: 50px;
+}
 /*------------- topsection css -----------------*/
 .content {
     position: relative;
@@ -357,13 +386,19 @@ a.link1:hover {
     background-repeat: no-repeat;
 }
 .top-sec-cont {
-    font-size: 64px;
-    color: #000;
+    position: relative;
+    font-size: 50px;
+    color: #fff;
     line-height: 1.4;
-    font-family: serif;
     font-weight: bold;
     padding: 15px;
-    left: 5%;
+    top: 80%;
+}
+.topsection .row{
+    margin-right: 0;
+}
+.top-sec-cont div{
+    margin-left: 25%;
 }
 .top-cont-work {
     font-size: 30px;
@@ -825,6 +860,13 @@ img.tile-img {
     .dropdown-menu {
         border: 1px solid rgba(0, 0, 0, 0);
         padding: 0 0 0.5rem 0;
+    }
+    .topsection{
+        background-size: 200% 100%;
+    }
+    .top-sec-cont{
+        top: 40%;
+        font-size: 40px;
     }
 }
 @media (max-width:640px) {
