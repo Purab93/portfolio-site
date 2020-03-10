@@ -52,6 +52,7 @@ h4 {
     font-size: 18px;
     color: #454a4d;
     font-weight: bold;
+    line-height: 1.4;
 }
 
 h5,
@@ -867,6 +868,14 @@ img.tile-img {
     .top-sec-cont{
         top: 40%;
         font-size: 40px;
+    }
+    a,
+    a:link,
+    a:active,
+    a:visited,
+    a:hover,
+    a:focus {
+        color:#000;
     }
 }
 @media (max-width:640px) {
